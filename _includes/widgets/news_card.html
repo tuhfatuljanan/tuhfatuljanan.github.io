@@ -1,0 +1,21 @@
+{% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
+
+<div class="my-3 p-0 shadow-sm rounded-xl section-card news-panel">
+    <h6 class="section-heading"><i class="fas fa-rss"></i> News</h6>
+    <div class="p-3 small">
+        {% for year in news_by_year %}
+        <div class="news-group {% if not_first -%}border-top{%- endif %}">
+            {% assign not_first = true %}
+            <div class="news-year text-muted">{{ year.name }}</div>
+            <div class="news-items">
+                {% for item in year.items %}
+                <div class="news-item d-flex">
+                    <div class="news-title">{{ item.title }}</div>
+                    <div class="news-date ml-auto mt-auto text-muted no-break"><i>{{ item.date | date: "%b %d" }}</i></div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

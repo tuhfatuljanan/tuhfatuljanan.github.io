@@ -1,0 +1,24 @@
+homepage:
+  show_experience: true
+  show_news: true
+  show_selected_publications: true
+  num_news: 10
+
+footer_text: >-
+  <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+    <span id="current-date" style="font-size: 1em;"></span>
+    <script>
+      var now = new Date();
+      var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var year = now.getFullYear();
+      var month = String(now.getMonth() + 1).padStart(2, '0');
+      var day = String(now.getDate()).padStart(2, '0');
+      var weekDay = weekDays[now.getDay()];
+      var startOfYear = new Date(year, 0, 1);
+      var endOfYear = new Date(year + 1, 0, 1);
+      var passed = now - startOfYear;
+      var total = endOfYear - startOfYear;
+      var percent = (passed / total * 100).toFixed(2);
+      document.getElementById('current-date').innerText = year + '-' + month + '-' + day + '-' + weekDay + ' | ' + percent + '% of the year has passed';
+    </script>
+  </div>

@@ -1,0 +1,57 @@
+primary_name: "Peisen Sun"
+secondary_name: "孙培森"
+navbar_name: "Peisen Sun (孙培森)"
+
+positions:
+- name: Ph.D. Student
+- name: Xi'an Jiaotong University
+  logo: /assets/images/badges/XJTU.png
+
+
+email: "sunpeisen@stu.xjtu.edu.cn"
+gscholar: MtCpY1sAAAAJ&hl
+github: PSSUN
+twitter: Sun_python
+orcid: 0000-0003-0796-2133
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    I am Peisen Sun, a Ph.D. candidate in the Department of Control Science and Engineering at Xi'an Jiaotong University. My research primarily focuses on bioinformatics.
+  </p>
+  <p>
+    I employ machine learning and artificial intelligence approaches to address complex genomics problems, leveraging state-of-the-art single-cell and spatial omics technologies. My work aims to elucidate the molecular mechanisms underlying biological systems.
+  </p>
+  <p>
+    My research contributions have been published as first author (including co-first author) in journals such as Cell Genomics and Nature Communications.
+  </p>
+
+portrait_url: /assets/images/photos/me.png
+portrait_caption: |
+  Peisen Sun (孙培森), Ph.D. Student, Xi'an Jiaotong University  
+  西安交通大学-电子信息学部
+
+education:
+- name: Xi'an Jiaotong University
+  logo: /assets/images/badges/XJTU.png
+  position: Ph.D. in Control Science and Engineering
+#  date: Sep. 2022 - present
+- name: Shaanxi Normal University
+  logo: /assets/images/badges/SNNU.png
+  position: M.S. in Bioinformatics
+#  date: Sep. 2018 - Jul. 2021
+- name: Northwest A&F University
+  logo: /assets/images/badges/NWAFU.png
+  position: B.S. in Bioinformatics
+#  date: Sep. 2014 - Jul. 2018
+
+
+awards:
+- name: Outstanding Graduate
+  date: 2021
+- name: National Scholarship
+  date: 2021
+- name: Graduate First-Class Scholarship
+  date: 2021
+- name: Graduate First-Class Scholarship
+  date: 2020

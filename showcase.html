@@ -1,0 +1,34 @@
+---
+layout: default
+title : Showcase
+navbar_title: Showcase
+container_class: container-xl
+showcase_photos:
+- src: ./assets/images/photos/Liverpool.jpg
+  title: Liverpool
+  desc: Liverpool, UK
+- src: ./assets/images/photos/kunmingpool.jpg
+  title: Kunming Pool
+  desc: Xi'an, China
+- src: ./assets/images/photos/nanning.jpg
+  title: Nanning
+  desc: Nanning, China
+---
+
+<div style="min-height: calc(100vh - 200px); position: relative; z-index: 1;">
+    <div class="row mb-4">
+        <div class="p-2 col-md-8 col-sm-12 col-12">
+            <div>
+                <video controls class="w-100 rounded-xl">
+                    <source src="{{ '/assets/images/etc/stminer.mp4' | relative_url }}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="p-2 col-md-4 col-sm-6 col-6">
+            <div class="card border-0 shadow-sm">
+                {% include widgets/carousel.html id="showcase-photos" images=page.showcase_photos height="400px" %}
+            </div>
+        </div>
+    </div>
+</div>

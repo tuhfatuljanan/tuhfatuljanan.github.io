@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-sm fixed-top navbar-elegant">
+    <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
+        <a class="navbar-brand navbar-brand-elegant" href="{{ '/' | relative_url }}">
+            <span class="brand-text">{{site.data.profile.navbar_name}}</span>
+        </a>
+        <button class="navbar-toggler navbar-toggler-elegant" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto navbar-nav-elegant align-items-sm-center">
+                {% for item in site.data.navigation.pages %}
+                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
+                    <a class="nav-link nav-link-elegant" href="{{ item.url | relative_url }}">{{ item.name }}</a>
+                </li>
+                {% endfor %}
+                <li class="nav-item nav-theme-item">
+                    <label class="theme-switch" for="theme-toggle" title="切换日间/夜间模式" aria-label="切换日间/夜间模式">
+                        <input id="theme-toggle" type="checkbox" aria-label="切换日间/夜间模式">
+                        <span class="theme-slider"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar-elegant');
+        if (!navbar) {
+            return;
+        }
+
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) {
+            return;
+        }
+
+        // Get theme from localStorage or use default (light)
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.checked = savedTheme === 'dark';
+
+        themeToggle.addEventListener('change', function () {
+            const nextTheme = this.checked ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+        });
+    });
+</script>

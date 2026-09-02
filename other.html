@@ -1,0 +1,966 @@
+---
+layout: default
+title : Other
+navbar_title: Other
+---
+
+<section class="other-page" aria-label="Weather and calendar">
+    <header class="other-hero">
+        <div class="year-progress-panel" aria-label="Year progress">
+            <div class="year-progress-head">
+                <div>
+                    <span class="year-progress-kicker">Year progress</span>
+                    <strong id="year-progress-title">2026</strong>
+                </div>
+                <div class="year-progress-percent" id="year-progress-percent">--%</div>
+            </div>
+            <div class="year-progress-track" aria-hidden="true">
+                <span id="year-progress-fill"></span>
+            </div>
+            <div class="year-progress-foot">
+                <span id="year-progress-day">Day -- / --</span>
+                <span id="year-progress-left">-- days left</span>
+            </div>
+        </div>
+        <div class="other-clock" aria-live="polite">
+            <span id="other-clock-date">--</span>
+            <strong id="other-clock-time">--:--</strong>
+        </div>
+    </header>
+
+    <div class="other-grid">
+        <section class="other-panel weather-panel" aria-labelledby="weather-title">
+            <div class="other-panel-head">
+                <div>
+                    <p class="other-panel-kicker">Weather</p>
+                    <h2 id="weather-title">Xi'an</h2>
+                </div>
+                <div class="other-actions">
+                    <button id="weather-location-btn" class="other-icon-btn" type="button" aria-label="Use current location" title="Use current location">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                    </button>
+                    <button id="weather-refresh-btn" class="other-icon-btn" type="button" aria-label="Refresh weather" title="Refresh weather">
+                        <i class="fas fa-rotate-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="weather-status" class="weather-status" role="status">Loading weather</div>
+
+            <div class="weather-current">
+                <div class="weather-icon-wrap" aria-hidden="true">
+                    <i id="weather-icon" class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="weather-main">
+                    <div id="weather-temp" class="weather-temp">--</div>
+                    <div id="weather-summary" class="weather-summary">--</div>
+                </div>
+            </div>
+
+            <dl class="weather-metrics">
+                <div>
+                    <dt>Feels</dt>
+                    <dd id="weather-feels">--</dd>
+                </div>
+                <div>
+                    <dt>Humidity</dt>
+                    <dd id="weather-humidity">--</dd>
+                </div>
+                <div>
+                    <dt>Wind</dt>
+                    <dd id="weather-wind">--</dd>
+                </div>
+                <div>
+                    <dt>Rain</dt>
+                    <dd id="weather-rain">--</dd>
+                </div>
+            </dl>
+
+            <div id="weather-forecast" class="weather-forecast" aria-label="Daily forecast"></div>
+
+            <a class="weather-source" href="https://open-meteo.com/" rel="noopener" target="_blank">
+                Open-Meteo
+            </a>
+        </section>
+
+        <section class="other-panel calendar-panel" aria-labelledby="calendar-title">
+            <div class="other-panel-head">
+                <div>
+                    <p class="other-panel-kicker">Calendar</p>
+                    <h2 id="calendar-title">--</h2>
+                </div>
+                <div class="other-actions">
+                    <button id="calendar-prev" class="other-icon-btn" type="button" aria-label="Previous month" title="Previous month">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button id="calendar-today" class="other-icon-btn" type="button" aria-label="Today" title="Today">
+                        <i class="fas fa-calendar-day" aria-hidden="true"></i>
+                    </button>
+                    <button id="calendar-next" class="other-icon-btn" type="button" aria-label="Next month" title="Next month">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="calendar-weekdays" aria-hidden="true">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+            <div id="calendar-grid" class="calendar-grid" role="grid" aria-labelledby="calendar-title"></div>
+        </section>
+    </div>
+</section>
+
+<style>
+.other-page {
+    margin: 0 auto 3rem;
+    max-width: 1120px;
+    padding: 1rem 0 2rem;
+}
+
+.other-hero {
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    gap: 1.2rem;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+    padding: 0.65rem 0 1.15rem;
+}
+
+.other-panel-kicker {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    margin: 0 0 0.35rem;
+    text-transform: uppercase;
+}
+
+.year-progress-panel {
+    background:
+        radial-gradient(circle at 14% 0%, rgba(var(--color-accent-rgb), 0.14), transparent 34%),
+        linear-gradient(135deg, rgba(var(--color-surface-rgb), 0.82), rgba(var(--color-surface-muted-rgb), 0.56));
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+    flex: 1 1 860px;
+    max-width: 940px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0.82rem 1rem 0.74rem;
+    position: relative;
+}
+
+.year-progress-panel::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.26), transparent);
+    content: '';
+    inset: 0;
+    opacity: 0.28;
+    pointer-events: none;
+    position: absolute;
+}
+
+.year-progress-head,
+.year-progress-foot {
+    align-items: flex-end;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.year-progress-kicker {
+    color: var(--color-text-muted);
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    margin-bottom: 0.38rem;
+    text-transform: uppercase;
+}
+
+.year-progress-head strong {
+    color: var(--color-text);
+    display: block;
+    font-size: 1.28rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.year-progress-percent {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.year-progress-track {
+    background:
+        linear-gradient(180deg, rgba(var(--color-surface-muted-rgb), 0.96), rgba(var(--color-surface-rgb), 0.9));
+    border: none;
+    border-radius: 999px;
+    box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.08);
+    height: 1.05rem;
+    margin: 0.9rem 0 0.62rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.year-progress-track::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+    content: '';
+    inset: 1px 1px 50%;
+    pointer-events: none;
+    position: absolute;
+}
+
+.year-progress-track span {
+    background:
+        linear-gradient(90deg, #5fa8ff 0%, var(--color-link) 46%, #0a58ca 100%);
+    border-radius: inherit;
+    box-shadow: 0 0 22px rgba(var(--color-accent-rgb), 0.24);
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.5s var(--motion-ease);
+    width: 0%;
+}
+
+.year-progress-track span::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+    content: '';
+    inset: 0;
+    position: absolute;
+    transform: translateX(42%);
+}
+
+.year-progress-foot {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.year-progress-foot span {
+    background: rgba(var(--color-surface-rgb), 0.55);
+    border: 1px solid rgba(var(--color-accent-rgb), 0.12);
+    border-radius: 999px;
+    padding: 0.24rem 0.58rem;
+}
+
+.other-clock {
+    color: var(--color-text-muted);
+    display: grid;
+    gap: 0.18rem;
+    justify-items: end;
+    min-width: 12rem;
+}
+
+.other-clock span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.other-clock strong {
+    color: var(--color-text);
+    font-size: 1.6rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.other-grid {
+    align-items: stretch;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+}
+
+.other-panel {
+    background: rgba(var(--color-surface-rgb), 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.other-panel-head {
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1.1rem 1.2rem;
+}
+
+.other-panel-head h2 {
+    font-size: 1.25rem;
+    letter-spacing: 0;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.other-actions {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.45rem;
+}
+
+.other-icon-btn {
+    align-items: center;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    color: var(--color-text);
+    cursor: pointer;
+    display: inline-flex;
+    height: 2.25rem;
+    justify-content: center;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    width: 2.25rem;
+}
+
+.other-icon-btn:hover {
+    background: var(--color-accent-soft);
+    border-color: rgba(var(--color-accent-rgb), 0.32);
+    color: var(--color-link-hover);
+    transform: translateY(-1px);
+}
+
+.other-icon-btn:active {
+    transform: translateY(0);
+}
+
+.other-icon-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.58;
+    transform: none;
+}
+
+.weather-status {
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    min-height: 1.15rem;
+    padding: 0.9rem 1.2rem 0;
+}
+
+.weather-current {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 1.05rem 1.2rem 1rem;
+}
+
+.weather-icon-wrap {
+    align-items: center;
+    background: color-mix(in srgb, var(--color-accent-soft) 70%, var(--color-surface) 30%);
+    border: 1px solid rgba(var(--color-accent-rgb), 0.2);
+    border-radius: 0.5rem;
+    color: var(--color-accent-strong);
+    display: flex;
+    height: 4.7rem;
+    justify-content: center;
+    width: 4.7rem;
+}
+
+.weather-icon-wrap i {
+    font-size: 2.1rem;
+}
+
+.weather-main {
+    min-width: 0;
+}
+
+.weather-temp {
+    color: var(--color-text);
+    font-size: clamp(2.35rem, 8vw, 4.3rem);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 0.95;
+}
+
+.weather-summary {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-top: 0.4rem;
+}
+
+.weather-metrics {
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    padding: 0 1.2rem 1rem;
+}
+
+.weather-metrics div {
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    min-width: 0;
+    padding: 0.75rem 0.8rem;
+}
+
+.weather-metrics dt {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-bottom: 0.42rem;
+    text-transform: uppercase;
+}
+
+.weather-metrics dd {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.weather-forecast {
+    border-top: 1px solid var(--color-border);
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 1rem 1.2rem;
+}
+
+.weather-day {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.72rem 0.45rem;
+    text-align: center;
+}
+
+.weather-day-name {
+    color: var(--color-text-muted);
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.weather-day i {
+    color: var(--color-accent-strong);
+    font-size: 1rem;
+    margin-bottom: 0.52rem;
+}
+
+.weather-day-temp {
+    color: var(--color-text);
+    display: block;
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.weather-source {
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-top: auto;
+    padding: 0.85rem 1.2rem;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.weather-source:hover {
+    color: var(--color-link-hover);
+    text-decoration: none;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekdays {
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.calendar-grid {
+    gap: 0.45rem;
+    padding: 1rem;
+}
+
+.calendar-day {
+    align-items: center;
+    aspect-ratio: 1 / 0.84;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    color: var(--color-text);
+    display: flex;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 3.25rem;
+    position: relative;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.calendar-day:hover,
+.calendar-day:focus-visible {
+    background: var(--color-accent-soft);
+    border-color: rgba(var(--color-accent-rgb), 0.34);
+    box-shadow: 0 8px 18px rgba(var(--color-accent-rgb), 0.12);
+    color: var(--color-accent-strong);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.calendar-day-muted {
+    color: color-mix(in srgb, var(--color-text-muted) 55%, transparent);
+}
+
+.calendar-day-weekend {
+    background: rgba(var(--color-surface-muted-rgb), 0.55);
+}
+
+.calendar-day-today {
+    background: var(--color-accent-soft);
+    border-color: rgba(var(--color-accent-rgb), 0.38);
+    color: var(--color-accent-strong);
+}
+
+@supports not (background: color-mix(in srgb, black 50%, white 50%)) {
+    .weather-icon-wrap {
+        background: var(--color-accent-soft);
+    }
+
+    .calendar-day-muted {
+        color: var(--color-text-muted);
+        opacity: 0.55;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .other-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .other-page {
+        padding-top: 0.3rem;
+    }
+
+    .other-hero {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    .year-progress-panel {
+        max-width: none;
+        width: 100%;
+    }
+
+    .other-clock {
+        justify-items: end;
+        min-width: 0;
+    }
+
+    .other-panel-head {
+        align-items: flex-start;
+        padding: 0.95rem;
+    }
+
+    .weather-status,
+    .weather-current,
+    .weather-metrics,
+    .weather-forecast,
+    .weather-source {
+        padding-left: 0.95rem;
+        padding-right: 0.95rem;
+    }
+
+    .weather-current {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-icon-wrap {
+        height: 4.2rem;
+        width: 4.2rem;
+    }
+
+    .weather-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-forecast {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .calendar-weekdays,
+    .calendar-grid {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+    }
+
+    .calendar-grid {
+        gap: 0.25rem;
+    }
+
+    .calendar-day {
+        font-size: 0.84rem;
+        min-height: 2.35rem;
+    }
+}
+</style>
+
+<script>
+(function () {
+    const DEFAULT_LOCATION = {
+        label: "Xi'an",
+        latitude: 34.3416,
+        longitude: 108.9398
+    };
+
+    const weatherEls = {
+        title: document.getElementById('weather-title'),
+        status: document.getElementById('weather-status'),
+        icon: document.getElementById('weather-icon'),
+        temp: document.getElementById('weather-temp'),
+        summary: document.getElementById('weather-summary'),
+        feels: document.getElementById('weather-feels'),
+        humidity: document.getElementById('weather-humidity'),
+        wind: document.getElementById('weather-wind'),
+        rain: document.getElementById('weather-rain'),
+        forecast: document.getElementById('weather-forecast'),
+        refreshBtn: document.getElementById('weather-refresh-btn'),
+        locationBtn: document.getElementById('weather-location-btn')
+    };
+
+    const calendarEls = {
+        title: document.getElementById('calendar-title'),
+        grid: document.getElementById('calendar-grid'),
+        prevBtn: document.getElementById('calendar-prev'),
+        todayBtn: document.getElementById('calendar-today'),
+        nextBtn: document.getElementById('calendar-next')
+    };
+
+    const clockEls = {
+        date: document.getElementById('other-clock-date'),
+        time: document.getElementById('other-clock-time'),
+        yearProgressTitle: document.getElementById('year-progress-title'),
+        yearProgressPercent: document.getElementById('year-progress-percent'),
+        yearProgressFill: document.getElementById('year-progress-fill'),
+        yearProgressDay: document.getElementById('year-progress-day'),
+        yearProgressLeft: document.getElementById('year-progress-left')
+    };
+
+    if (!weatherEls.title || !calendarEls.title || !clockEls.date) return;
+
+    let activeLocation = DEFAULT_LOCATION;
+    let calendarCursor = new Date();
+    calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth(), 1);
+
+    function setWeatherStatus(text) {
+        weatherEls.status.textContent = text;
+    }
+
+    function setWeatherButtons(disabled) {
+        weatherEls.refreshBtn.disabled = disabled;
+        weatherEls.locationBtn.disabled = disabled;
+    }
+
+    function describeWeather(code) {
+        const weatherCode = Number(code);
+        if (weatherCode === 0) return { label: 'Clear sky', icon: 'fa-sun' };
+        if (weatherCode === 1 || weatherCode === 2) return { label: 'Mainly clear', icon: 'fa-cloud-sun' };
+        if (weatherCode === 3) return { label: 'Overcast', icon: 'fa-cloud' };
+        if (weatherCode === 45 || weatherCode === 48) return { label: 'Fog', icon: 'fa-smog' };
+        if ((weatherCode >= 51 && weatherCode <= 57) || (weatherCode >= 61 && weatherCode <= 67) || (weatherCode >= 80 && weatherCode <= 82)) {
+            return { label: 'Rain', icon: 'fa-cloud-rain' };
+        }
+        if ((weatherCode >= 71 && weatherCode <= 77) || weatherCode === 85 || weatherCode === 86) {
+            return { label: 'Snow', icon: 'fa-snowflake' };
+        }
+        if (weatherCode >= 95 && weatherCode <= 99) return { label: 'Thunderstorm', icon: 'fa-cloud-bolt' };
+        return { label: 'Weather', icon: 'fa-cloud-sun' };
+    }
+
+    function formatNumber(value, maximumFractionDigits) {
+        if (typeof value !== 'number' || Number.isNaN(value)) return '--';
+        return new Intl.NumberFormat('en-US', {
+            maximumFractionDigits: maximumFractionDigits
+        }).format(value);
+    }
+
+    function formatMetric(value, unit, maximumFractionDigits) {
+        if (typeof value !== 'number' || Number.isNaN(value)) return '--';
+        return formatNumber(value, maximumFractionDigits) + (unit || '');
+    }
+
+    function updateWeatherIcon(iconName) {
+        weatherEls.icon.className = 'fas ' + iconName;
+    }
+
+    function renderForecast(data) {
+        weatherEls.forecast.innerHTML = '';
+        const daily = data.daily;
+        const units = data.daily_units || {};
+        if (!daily || !Array.isArray(daily.time)) return;
+
+        daily.time.slice(0, 4).forEach(function (day, index) {
+            const meta = describeWeather(daily.weather_code && daily.weather_code[index]);
+            const date = new Date(day + 'T00:00:00');
+            const maxTemp = daily.temperature_2m_max && daily.temperature_2m_max[index];
+            const minTemp = daily.temperature_2m_min && daily.temperature_2m_min[index];
+            const tempUnit = units.temperature_2m_max || units.temperature_2m_min || '';
+            const dayEl = document.createElement('div');
+            dayEl.className = 'weather-day';
+            dayEl.innerHTML =
+                '<span class="weather-day-name">' + new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(date) + '</span>' +
+                '<i class="fas ' + meta.icon + '" aria-hidden="true"></i>' +
+                '<span class="weather-day-temp">' +
+                formatNumber(maxTemp, 0) + '/' + formatNumber(minTemp, 0) + tempUnit +
+                '</span>';
+            weatherEls.forecast.appendChild(dayEl);
+        });
+    }
+
+    async function loadWeather(location) {
+        activeLocation = location || activeLocation;
+        weatherEls.title.textContent = activeLocation.label;
+        setWeatherButtons(true);
+        setWeatherStatus('Loading weather');
+
+        const params = new URLSearchParams({
+            latitude: String(activeLocation.latitude),
+            longitude: String(activeLocation.longitude),
+            current: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m',
+            daily: 'weather_code,temperature_2m_max,temperature_2m_min',
+            timezone: 'auto',
+            forecast_days: '4'
+        });
+
+        try {
+            const response = await fetch('https://api.open-meteo.com/v1/forecast?' + params.toString(), {
+                headers: { accept: 'application/json' }
+            });
+            if (!response.ok) {
+                throw new Error('Weather request failed');
+            }
+
+            const data = await response.json();
+            const current = data.current || {};
+            const currentUnits = data.current_units || {};
+            const meta = describeWeather(current.weather_code);
+
+            updateWeatherIcon(meta.icon);
+            weatherEls.temp.textContent = formatMetric(current.temperature_2m, currentUnits.temperature_2m, 1);
+            weatherEls.summary.textContent = meta.label;
+            weatherEls.feels.textContent = formatMetric(current.apparent_temperature, currentUnits.apparent_temperature, 1);
+            weatherEls.humidity.textContent = formatMetric(current.relative_humidity_2m, currentUnits.relative_humidity_2m, 0);
+            weatherEls.wind.textContent = formatMetric(current.wind_speed_10m, currentUnits.wind_speed_10m, 1);
+            weatherEls.rain.textContent = formatMetric(current.precipitation, currentUnits.precipitation, 1);
+            renderForecast(data);
+
+            const updatedAt = current.time ? new Date(current.time).toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit'
+            }) : '--:--';
+            setWeatherStatus('Updated ' + updatedAt);
+        } catch (error) {
+            setWeatherStatus('Weather unavailable');
+        } finally {
+            setWeatherButtons(false);
+        }
+    }
+
+    function requestBrowserLocation() {
+        if (!navigator.geolocation) {
+            setWeatherStatus('Location unavailable');
+            return;
+        }
+
+        setWeatherButtons(true);
+        setWeatherStatus('Finding location');
+        navigator.geolocation.getCurrentPosition(function (position) {
+            loadWeather({
+                label: 'Current location',
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+            });
+        }, function () {
+            setWeatherButtons(false);
+            setWeatherStatus('Using Xi\'an');
+            loadWeather(DEFAULT_LOCATION);
+        }, {
+            enableHighAccuracy: false,
+            maximumAge: 900000,
+            timeout: 8000
+        });
+    }
+
+    const SHANGHAI_OFFSET_MS = 8 * 60 * 60 * 1000;
+
+    function updateYearProgress(now) {
+        const shanghaiTime = new Date(now.getTime() + SHANGHAI_OFFSET_MS);
+        const year = shanghaiTime.getUTCFullYear();
+        const yearStart = Date.UTC(year, 0, 1);
+        const nextYearStart = Date.UTC(year + 1, 0, 1);
+        const elapsed = shanghaiTime.getTime() - yearStart;
+        const total = nextYearStart - yearStart;
+        const boundedPercent = Math.min(100, Math.max(0, elapsed / total * 100));
+        const dayOfYear = Math.floor(elapsed / 86400000) + 1;
+        const daysInYear = Math.round(total / 86400000);
+        const daysLeft = Math.max(0, daysInYear - dayOfYear);
+
+        if (clockEls.yearProgressTitle) clockEls.yearProgressTitle.textContent = String(year);
+        if (clockEls.yearProgressPercent) clockEls.yearProgressPercent.textContent = boundedPercent.toFixed(2) + '%';
+        if (clockEls.yearProgressFill) clockEls.yearProgressFill.style.width = boundedPercent.toFixed(4) + '%';
+        if (clockEls.yearProgressDay) clockEls.yearProgressDay.textContent = 'Day ' + dayOfYear + ' / ' + daysInYear;
+        if (clockEls.yearProgressLeft) clockEls.yearProgressLeft.textContent = daysLeft + ' days left';
+    }
+
+    function updateClock() {
+        const now = new Date();
+        clockEls.date.textContent = new Intl.DateTimeFormat('en-US', {
+            weekday: 'short',
+            month: 'short',
+            day: '2-digit',
+            timeZone: 'Asia/Shanghai'
+        }).format(now);
+        clockEls.time.textContent = new Intl.DateTimeFormat('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+            timeZone: 'Asia/Shanghai'
+        }).format(now);
+        updateYearProgress(now);
+    }
+
+    function daysInMonth(year, month) {
+        return new Date(year, month + 1, 0).getDate();
+    }
+
+    function sameDay(a, b) {
+        return a.getFullYear() === b.getFullYear() &&
+            a.getMonth() === b.getMonth() &&
+            a.getDate() === b.getDate();
+    }
+
+    function renderCalendar() {
+        const year = calendarCursor.getFullYear();
+        const month = calendarCursor.getMonth();
+        const today = new Date();
+        const firstDay = new Date(year, month, 1);
+        const startOffset = (firstDay.getDay() + 6) % 7;
+        const currentMonthDays = daysInMonth(year, month);
+        const previousMonthDays = daysInMonth(year, month - 1);
+
+        calendarEls.title.textContent = new Intl.DateTimeFormat('en-US', {
+            month: 'long',
+            year: 'numeric'
+        }).format(calendarCursor);
+        calendarEls.grid.innerHTML = '';
+
+        for (let i = 0; i < 42; i += 1) {
+            let dayNumber;
+            let cellDate;
+            let muted = false;
+
+            if (i < startOffset) {
+                dayNumber = previousMonthDays - startOffset + i + 1;
+                cellDate = new Date(year, month - 1, dayNumber);
+                muted = true;
+            } else if (i >= startOffset + currentMonthDays) {
+                dayNumber = i - startOffset - currentMonthDays + 1;
+                cellDate = new Date(year, month + 1, dayNumber);
+                muted = true;
+            } else {
+                dayNumber = i - startOffset + 1;
+                cellDate = new Date(year, month, dayNumber);
+            }
+
+            const dayOfWeek = cellDate.getDay();
+            const dayEl = document.createElement('div');
+            dayEl.className = 'calendar-day';
+            if (muted) dayEl.classList.add('calendar-day-muted');
+            if (dayOfWeek === 0 || dayOfWeek === 6) dayEl.classList.add('calendar-day-weekend');
+            if (sameDay(cellDate, today)) {
+                dayEl.classList.add('calendar-day-today');
+                dayEl.setAttribute('aria-current', 'date');
+            }
+            dayEl.setAttribute('role', 'gridcell');
+            dayEl.setAttribute('aria-label', new Intl.DateTimeFormat('en-US', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            }).format(cellDate));
+            dayEl.textContent = String(dayNumber);
+            calendarEls.grid.appendChild(dayEl);
+        }
+    }
+
+    weatherEls.refreshBtn.addEventListener('click', function () {
+        loadWeather(activeLocation);
+    });
+
+    weatherEls.locationBtn.addEventListener('click', requestBrowserLocation);
+
+    calendarEls.prevBtn.addEventListener('click', function () {
+        calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth() - 1, 1);
+        renderCalendar();
+    });
+
+    calendarEls.nextBtn.addEventListener('click', function () {
+        calendarCursor = new Date(calendarCursor.getFullYear(), calendarCursor.getMonth() + 1, 1);
+        renderCalendar();
+    });
+
+    calendarEls.todayBtn.addEventListener('click', function () {
+        const today = new Date();
+        calendarCursor = new Date(today.getFullYear(), today.getMonth(), 1);
+        renderCalendar();
+    });
+
+    updateClock();
+    window.setInterval(updateClock, 1000);
+    renderCalendar();
+    loadWeather(DEFAULT_LOCATION);
+})();
+</script>
