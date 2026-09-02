@@ -20,19 +20,21 @@ portrait_url: /assets/images/badges/Tuhfa.png
 
 education:
 - name: Universitas Airlangga
+  year: 2024–Present
   logo: /assets/images/badges/UNAIR.png
   position: Ph.D. in Mathematics and Natural Sciences
 
 - name: Institut Teknologi Bandung
+  year: 2017–2019
   logo: /assets/images/badges/ITB.png
   position: M.Sc. in Mathematics
 
 - name: Universitas Airlangga
+  year: 2012–2016
   logo: /assets/images/badges/UNAIR.png
   position: B.Sc. in Mathematics
-
-
-
+  
+  
 awards:
 - name: Doctoral Scholarship from the Ministry of Religious Affairs and LPDP
   date: 2023
