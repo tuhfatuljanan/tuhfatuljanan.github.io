@@ -792,16 +792,17 @@ div.lazy {
 .education-item {
     display: flex;
     align-items: flex-start;
+    margin-left: -10px;
 }
 
 .education-year {
-    width: 65px;
+    width: 75px;
     flex-shrink: 0;
-    font-size: 0.75rem;
-    color: #777;
-    text-align: right;
-    padding-top: 2px;
-    margin-right: 10px;
+    font-size: 0.875rem;
+    color: #555;
+    text-align: left;
+    padding-top: 1px;
+    margin-right: 8px;
     white-space: nowrap;
 }
 
