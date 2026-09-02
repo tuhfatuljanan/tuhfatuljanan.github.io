@@ -5,11 +5,10 @@ navbar_name: ""
 positions:
 - name: Lecturer and Researcher
 - name: Institut Ahmad Dahlan Probolinggo
-  logo: /assets/images/badges/XJTU.png
-
+ 
 
 email: "tuhfatuljanan1@gmail.com"
-gscholar: MtCpY1sAAAAJ&hl
+scopus: MtCpY1sAAAAJ&hl
 
 short_bio_text_justify: false
 short_bio: >-
@@ -24,15 +23,15 @@ portrait_caption: |
 
 education:
 - name: Universitas Airlangga
-  logo: /assets/images/badges/XJTU.png
+  logo: /assets/images/badges/UNAIR.png
   position: Ph.D. in Mathematics and Natural Sciences
 
 - name: Institut Teknologi Bandung
-  logo: /assets/images/badges/SNNU.png
+  logo: /assets/images/badges/ITB.png
   position: M.Sc. in Mathematics
 
 - name: Universitas Airlangga
-  logo: /assets/images/badges/NWAFU.png
+  logo: /assets/images/badges/UNAIR.png
   position: B.Sc. in Mathematics
 
 
