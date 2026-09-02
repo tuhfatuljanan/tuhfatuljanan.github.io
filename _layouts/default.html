@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ page.title }} - {{ site.data.profile.navbar_name }}</title>
+    {% if page.title == "Homepage" %}
+<title>{{ site.data.profile.navbar_name }}</title>
+{% else %}
+<title>{{ page.title }} - {{ site.data.profile.navbar_name }}</title>
+{% endif %}
     <link rel="icon" href="{{ '/assets/images/etc/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="{{ '/assets/images/etc/apple-touch-icon.png' | relative_url }}" sizes="180x180">
 
