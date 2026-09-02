@@ -788,29 +788,38 @@ div.lazy {
     }
 }
 
-/* Education */
+/* =========================
+   EDUCATION
+   ========================= */
+
 .education-item {
-    display: flex;
-    align-items: flex-start;
-    margin-left: -10px;
+    display: flex !important;
+    align-items: flex-start !important;
+    margin-left: -28px !important;
+    margin-bottom: 14px !important;
 }
 
 .education-year {
-    width: 75px;
-    flex-shrink: 0;
-    font-size: 0.875rem;
-    color: #555;
-    text-align: left;
-    padding-top: 1px;
-    margin-right: 8px;
-    white-space: nowrap;
+    flex: 0 0 78px !important;
+    width: 78px !important;
+    margin-right: 8px !important;
+    padding-top: 1px !important;
+
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: #555 !important;
+
+    text-align: left !important;
+    white-space: nowrap !important;
 }
 
 .education-logo {
-    width: 25px;
-    min-width: 25px;
-    flex-shrink: 0;
-    padding-top: 1px;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 9px !important;
+    padding: 0 !important;
 }
 
 .education-logo img {
@@ -818,15 +827,18 @@ div.lazy {
     height: 22px !important;
     max-width: 22px !important;
     max-height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+
     object-fit: contain !important;
     display: block !important;
 }
 
 .education-item .media-body {
-    min-width: 0;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
 }
 
 .education-position {
-    line-height: 1.35;
-    color: #666;
+    line-height: 1.4 !important;
 }
