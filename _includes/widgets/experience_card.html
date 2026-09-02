@@ -18,20 +18,28 @@
                     {{ item.date }}
                 </div>
 
-                <div class="education-logo">
-                    <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}">
-                </div>
-
                 <div class="education-item-info">
-                    <div>{{ item.name }}</div>
+
+                    <div class="education-school">
+                        <span>{{ item.name }}</span>
+
+                        {% if item.logo %}
+                        <img src="{{ item.logo | relative_url }}"
+                             alt="{{ item.name }}"
+                             class="education-logo-right">
+                        {% endif %}
+                    </div>
 
                     {% if item.dept %}
-                    <div class="small">{{ item.dept }}</div>
+                    <div class="small">
+                        {{ item.dept }}
+                    </div>
                     {% endif %}
 
                     <div class="small education-position">
                         {{ item.position }}
                     </div>
+
                 </div>
 
             </li>
