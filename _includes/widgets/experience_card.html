@@ -57,9 +57,9 @@
                                 {% for item in site.data.profile.awards %}
                                 <li>
                                     <div class="d-flex">
-                                        <div>{{ item.name }}</div>
-                                        <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
-                                    </div>
+    <div class="no-break mr-3"><em>{{ item.date }}</em></div>
+    <div>{{ item.name }}</div>
+</div>
                                 </li>
                                 {% endfor %}
                             </ul>
