@@ -855,7 +855,9 @@ div.lazy {
 }
 
 .education-position {
-    line-height: 1.4 !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    font-weight: 400 !important;
     color: var(--color-text-muted) !important;
     margin-top: 1px !important;
 }
