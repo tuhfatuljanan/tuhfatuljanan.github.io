@@ -830,6 +830,13 @@ div.lazy {
     padding: 0 !important;
 }
 
+.education-position {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    font-weight: 400 !important;
+    color: var(--color-text-muted) !important;
+    margin-top: 1px !important;
+}
 .education-logo-right {
     display: block !important;
 
@@ -854,13 +861,6 @@ div.lazy {
     height: 20px !important;
 }
 
-.education-position {
-    font-size: 0.75rem !important;
-    line-height: 1.35 !important;
-    font-weight: 400 !important;
-    color: var(--color-text-muted) !important;
-    margin-top: 1px !important;
-}
 
 /* =========================
    EDUCATION & HONOR/AWARDS
@@ -876,13 +876,6 @@ div.lazy {
 }
 
 /* Detail / gelar / keterangan */
-.education-position,
-.awards-position {
-    font-size: 0.875rem !important;
-    line-height: 1.4 !important;
-    font-weight: 400 !important;
-    color: var(--color-text-muted) !important;
-}
 
 /* Tahun */
 .education-year,
@@ -934,10 +927,3 @@ div.lazy {
     font-weight: 400 !important;
 }
 
-/* Ukuran font gelar pada Education */
-.education-item .education-item-info .education-position {
-    font-size: 0.75rem !important;
-    line-height: 1.3 !important;
-    font-weight: 400 !important;
-    color: var(--color-text-muted) !important;
-}
