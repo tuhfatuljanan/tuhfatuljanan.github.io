@@ -890,3 +890,38 @@ div.lazy {
     font-weight: 400 !important;
     color: var(--color-text-muted) !important;
 }
+
+/* =========================
+   HONORS & AWARDS
+   ========================= */
+
+.awards-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    margin: 0 0 14px 0 !important;
+    padding: 0 !important;
+}
+
+.awards-year {
+    flex: 0 0 50px !important;
+    width: 50px !important;
+    margin: 1px 8px 0 0 !important;
+    padding: 0 !important;
+
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: var(--color-text-muted) !important;
+
+    white-space: nowrap !important;
+}
+
+.awards-name {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: var(--color-text) !important;
+}
