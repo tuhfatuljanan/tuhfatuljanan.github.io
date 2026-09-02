@@ -83,7 +83,9 @@ title: 404 - Page Not Found
 
 <div class="apple-404">
     <div class="apple-card">
-        <img src="{{ '/assets/images/photos/me.png' | relative_url }}" alt="Peisen Sun" class="apple-avatar">
+        <img src="{{ site.data.profile.portrait_url | relative_url }}"
+     alt="{{ site.data.profile.primary_name }}"
+     class="apple-avatar">
         <div class="apple-title">404</div>
         <div class="apple-subtitle">Page Not Found</div>
         <div class="apple-desc">The page you're looking for doesn't exist or has been moved.</div>
