@@ -859,3 +859,34 @@ div.lazy {
     color: var(--color-text-muted) !important;
     margin-top: 1px !important;
 }
+
+/* =========================
+   EDUCATION & HONOR/AWARDS
+   ========================= */
+
+/* Nama universitas dan nama penghargaan */
+.education-item-info > div:first-child,
+.awards-item-info > div:first-child {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: var(--color-text) !important;
+}
+
+/* Detail / gelar / keterangan */
+.education-position,
+.awards-position {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: var(--color-text-muted) !important;
+}
+
+/* Tahun */
+.education-year,
+.awards-year {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: var(--color-text-muted) !important;
+}
