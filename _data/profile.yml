@@ -29,17 +29,17 @@ portrait_caption: |
   西安交通大学-电子信息学部
 
 education:
-- name: Xi'an Jiaotong University
+- name: Universitas Airlangga
   logo: /assets/images/badges/XJTU.png
-  position: Ph.D. in Control Science and Engineering
+  position: Ph.D. in Mathematics and Natural Sciences
 
-- name: Shaanxi Normal University
+- name: Institut Teknologi Bandung
   logo: /assets/images/badges/SNNU.png
-  position: M.S. in Bioinformatics
+  position: M.Sc. in Mathematics
 
-- name: Northwest A&F University
+- name: Universitas Airlangga
   logo: /assets/images/badges/NWAFU.png
-  position: B.S. in Bioinformatics
+  position: B.Sc. in Mathematics
 
 
 
