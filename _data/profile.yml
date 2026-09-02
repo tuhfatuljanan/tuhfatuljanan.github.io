@@ -1,6 +1,6 @@
 primary_name: "Tuhfatul Janan"
-secondary_name: "df"
-navbar_name: "ghgfh"
+secondary_name: ""
+navbar_name: ""
 
 positions:
 - name: Lecturer and Researcher
@@ -8,11 +8,8 @@ positions:
   logo: /assets/images/badges/XJTU.png
 
 
-email: "sunpeisen@stu.xjtu.edu.cn"
+email: "tuhfatuljanan1@gmail.com"
 gscholar: MtCpY1sAAAAJ&hl
-github: PSSUN
-twitter: Sun_python
-orcid: 0000-0003-0796-2133
 
 short_bio_text_justify: false
 short_bio: >-
@@ -35,15 +32,15 @@ education:
 - name: Xi'an Jiaotong University
   logo: /assets/images/badges/XJTU.png
   position: Ph.D. in Control Science and Engineering
-#  date: Sep. 2022 - present
+
 - name: Shaanxi Normal University
   logo: /assets/images/badges/SNNU.png
   position: M.S. in Bioinformatics
-#  date: Sep. 2018 - Jul. 2021
+
 - name: Northwest A&F University
   logo: /assets/images/badges/NWAFU.png
   position: B.S. in Bioinformatics
-#  date: Sep. 2014 - Jul. 2018
+
 
 
 awards:
