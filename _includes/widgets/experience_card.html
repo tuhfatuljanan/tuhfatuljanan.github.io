@@ -7,12 +7,11 @@
 <div class="col-lg-6">
     <div class="mx-2 my-1">
         <h6>Education</h6>
-
         <ul class="list-unstyled mb-1">
 
             {% for item in site.data.profile.education %}
 
-            <li class="education-item">
+            <li class="media mb-2 education-item">
 
                 <!-- Tahun -->
                 <div class="education-year">
@@ -20,24 +19,20 @@
                 </div>
 
                 <!-- Logo -->
-                <div class="education-logo">
+                <div class="education-logo mr-2">
                     <img src="{{ item.logo | relative_url }}"
                          alt="{{ item.name }}">
                 </div>
 
-                <!-- Informasi pendidikan -->
-                <div class="education-info">
-                    <div class="education-name">
-                        {{ item.name }}
-                    </div>
+                <!-- Informasi -->
+                <div class="media-body">
+                    <div>{{ item.name }}</div>
 
                     {% if item.dept %}
-                    <div class="small">
-                        {{ item.dept }}
-                    </div>
+                    <div class="small">{{ item.dept }}</div>
                     {% endif %}
 
-                    <div class="small education-position">
+                    <div class="small">
                         {{ item.position }}
                     </div>
                 </div>
@@ -99,42 +94,41 @@
     </div>
 </div>
 
+/* Education */
 .education-item {
-    display: grid;
-    grid-template-columns: 75px 30px 1fr;
-    column-gap: 10px;
-    align-items: start;
-    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
 }
 
 .education-year {
-    font-size: 0.78rem;
+    width: 65px;
+    flex-shrink: 0;
+    font-size: 0.75rem;
     color: #777;
     text-align: right;
     padding-top: 2px;
+    margin-right: 10px;
     white-space: nowrap;
 }
 
 .education-logo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    width: 25px;
+    min-width: 25px;
+    flex-shrink: 0;
     padding-top: 1px;
 }
 
 .education-logo img {
-    width: 22px;
-    height: 22px;
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
     object-fit: contain;
+    display: block;
 }
 
-.education-info {
+.education-item .media-body {
     min-width: 0;
-}
-
-.education-name {
-    font-size: 0.9rem;
-    line-height: 1.25;
 }
 
 .education-position {
