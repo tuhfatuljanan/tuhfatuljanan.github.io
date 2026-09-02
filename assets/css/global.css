@@ -925,3 +925,9 @@ div.lazy {
     font-weight: 400 !important;
     color: var(--color-text) !important;
 }
+
+/* Tahun Honors & Awards: selalu normal, tidak italic */
+.awards-year {
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
