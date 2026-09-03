@@ -15,12 +15,7 @@
                 </p>
 
                 <p class="mt-0 mb-0 small">
-    {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }}
-    {% if item.volume %}, <strong>{{ item.volume }}</strong>{% endif %}
-    {% if item.issue %}({{ item.issue }}){% endif %}
-    {% if item.pages %}, pp. {{ item.pages }}{% endif %}
-    {% if item.pub_date %}, {{ item.pub_date }}{% endif %}
-    {{ item.pub_last }}
+    <i>{{ item.pub }}</i>{% if item.volume %}, <strong>{{ item.volume }}</strong>{% endif %}{% if item.issue %}({{ item.issue }}){% endif %}{% if item.pages %}, {{ item.pages }}{% endif %}{% if item.pub_date %}, {{ item.pub_date }}{% endif %}{{ item.pub_last }}
     <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span>
 </p>
 
