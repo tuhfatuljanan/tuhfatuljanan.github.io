@@ -957,3 +957,34 @@ div.lazy {
     font-size: 0.85rem;
 }
 
+/* =========================
+   ACADEMIC PROFILE LINKS
+   ========================= */
+
+.academic-profile-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 9px 0;
+    font-size: 0.78rem;
+}
+
+.academic-profile-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-muted) !important;
+    text-decoration: none !important;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+.academic-profile-links a:hover {
+    opacity: 0.65;
+}
+
+.academic-profile-links i {
+    font-size: 0.85rem;
+}
