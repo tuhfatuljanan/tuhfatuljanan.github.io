@@ -5,10 +5,14 @@ navbar_title: Home
 ---
 
 <div class="row">
-    <div class="col-lg-3 col-md-4">
-    {% include widgets/profile_card_mini.html %}
 
-       <div class="col-lg-9 col-md-8">
+    <!-- Left column -->
+    <div class="col-lg-3 col-md-4">
+        {% include widgets/profile_card_mini.html %}
+    </div>
+
+    <!-- Right column -->
+    <div class="col-lg-9 col-md-8">
 
         {% include widgets/profile_card_bio_only.html %}
 
@@ -21,20 +25,21 @@ navbar_title: Home
         {% endif %}
 
         {% if site.data.display.homepage.show_news %}
-        {% assign count_news = site.news | size %}
-        {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-        {% endif %}
+            {% assign count_news = site.news | size %}
+            {% if count_news > 0 %}
+                {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+            {% endif %}
         {% endif %}
 
         {% if site.data.display.homepage.show_selected_publications %}
-        {% assign pubs = site.publications | sort: "date" | reverse %}
-        {%
-        include widgets/publication_card.html
-        publications=pubs
-        title='<i class=""></i> Scopus Publications'
-        %}
+            {% assign pubs = site.publications | sort: "date" | reverse %}
+
+            {% include widgets/publication_card.html
+                publications=pubs
+                title='<i class=""></i> Scopus Publications'
+            %}
         {% endif %}
+
     </div>
-</div>
+
 </div>
