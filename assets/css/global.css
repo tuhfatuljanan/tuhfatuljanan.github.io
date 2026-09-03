@@ -969,3 +969,9 @@ div.lazy {
     margin: 0 !important;
     padding: 0 !important;
 }
+
+.academic-profile-links img.email-logo {
+    height: 14px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
