@@ -958,3 +958,11 @@ div.lazy {
 .academic-profile-links i {
     font-size: 0.85rem;
 }
+
+.profile-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 6px;
+}
