@@ -92,123 +92,53 @@
         </div>
 
 
-        <!-- Publications / Year Card -->
         <div class="card border-0 shadow-sm pub-stats-card mt-3">
-
             <div class="card-body px-4 py-3">
-
                 <h6 class="section-heading border-0 px-0 pt-0 pb-3">
-                    <i class=""></i>PUBLICATIONS / YEAR
+                    <i class="fas fa-chart-column mr-2"></i>PUBLICATIONS / YEAR
                 </h6>
-
-
-                {% assign pubs_by_year = site.publications
-                    | sort: "date"
-                    | group_by_exp: "item", "item.date | date: '%Y'" %}
-
+                {% assign pubs_by_year = site.publications | sort: "date" | group_by_exp: "item", "item.date | date: '%Y'" %}
                 {% assign max_pub_count = 0 %}
-
                 {% for year in pubs_by_year %}
-
                     {% assign year_count = year.items | size %}
-
                     {% if year_count > max_pub_count %}
                         {% assign max_pub_count = year_count %}
                     {% endif %}
-
                 {% endfor %}
-
-
-                <!-- Publication Chart -->
                 <div class="pub-chart">
-
                     {% for year in pubs_by_year %}
-
                         {% assign year_count = year.items | size %}
-
-                        {% if max_pub_count > 0 %}
-                            {% assign bar_height =
-                                year_count
-                                | times: 100.0
-                                | divided_by: max_pub_count %}
-                        {% else %}
-                            {% assign bar_height = 0 %}
-                        {% endif %}
-
-
+                        {% assign bar_height = year_count | times: 100.0 | divided_by: max_pub_count %}
                         <div class="pub-bar-item">
-
-                            <div class="pub-bar-value">
-                                {{ year_count }}
-                            </div>
-
+                            <div class="pub-bar-value">{{ year_count }}</div>
                             <div class="pub-bar-track">
-
-                                <div
-                                    class="pub-bar-fill"
-                                    style="height: {{ bar_height }}%;">
-                                </div>
-
+                                <div class="pub-bar-fill" style="height: {{ bar_height }}%;"></div>
                             </div>
-
-                            <div class="pub-bar-label">
-                                {{ year.name }}
-                            </div>
-
+                            <div class="pub-bar-label">{{ year.name }}</div>
                         </div>
-
                     {% endfor %}
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 
-
-<!-- WeChat Modal -->
 {% if site.data.profile.wechat_qrcode %}
-
 <div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
-
     <div class="modal-dialog modal-sm">
-
         <div class="modal-content">
-
             <div class="modal-body p-0">
-
-                <img
-                    src="{{ site.data.profile.wechat_qrcode | relative_url }}"
-                    class="img-fluid"
-                    alt="WeChat QR Code">
-
+                <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
             </div>
-
             {% if site.data.profile.wechat_prompt %}
-
             <div class="modal-body p-1">
                 {{ site.data.profile.wechat_prompt }}
             </div>
-
             {% endif %}
-
             <div class="modal-footer">
-
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-dismiss="modal">
-                    Close
-                </button>
-
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
-
         </div>
-
     </div>
-
 </div>
-
 {% endif %}
