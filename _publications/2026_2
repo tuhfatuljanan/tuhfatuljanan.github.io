@@ -1,22 +1,19 @@
 ---
-title: "Dynamical analysis and optimal control of the Mpox transmission model with stratified susceptibility"
+title: "Dynamical Analysis of Mpox Transmission Model Incorporating Asymptomatic Individuals"
 selected: false
-date: 2026-01-01
+date: 2026-06-08
 
-pub: "Mathematical Modelling and Numerical Simulation with Applications"
+pub: "Communication in Biomathematical Sciences"
 pub_date: "2026"
-volume: "6"
+volume: "9"
 issue: "1"
-pages: "186-227"
+pages: "48-67"
 
 authors:
   - Tuhfatul Janan
   - Fatmawati
-  - Cicik Alfiniyah
-  - Santi Martini
-  - Dipo Aldila
   - Agus Hasan
 
 links:
-  Article: "https://doi.org/10.53391/2791-8564.1022"
+  Article: "https://doi.org/10.5614/cbms.2026.9.1.4"
 ---
