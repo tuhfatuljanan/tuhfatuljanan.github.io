@@ -1002,7 +1002,7 @@ div.lazy {
 
 .publication-panel .pub-card h5,
 .publication-panel .pub-card-mobile-surface h5 {
-    font-size: 0.95rem !important;
+    font-size: 1.05rem !important;
     line-height: 1.4 !important;
     font-weight: 500 !important;
 }
