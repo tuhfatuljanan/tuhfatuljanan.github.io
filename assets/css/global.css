@@ -991,3 +991,11 @@ div.lazy {
 #scopus-publications {
     scroll-margin-top: 90px;
 }
+
+.text-profile-bio p {
+    margin-top: 0 !important;
+}
+
+.text-profile-bio p:last-child {
+    margin-bottom: 0 !important;
+}
