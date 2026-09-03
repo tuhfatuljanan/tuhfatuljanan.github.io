@@ -80,6 +80,18 @@
                         {% assign max_pub_count = year_count %}
                     {% endif %}
                 {% endfor %}
+                <div class="pub-chart">
+                    {% for year in pubs_by_year %}
+                        {% assign year_count = year.items | size %}
+                        {% assign bar_height = year_count | times: 100.0 | divided_by: max_pub_count %}
+                        <div class="pub-bar-item">
+                            <div class="pub-bar-value">{{ year_count }}</div>
+                            <div class="pub-bar-track">
+                                <div class="pub-bar-fill" style="height: {{ bar_height }}%;"></div>
+                            </div>
+                            <div class="pub-bar-label">{{ year.name }}</div>
+                        </div>
+                    {% endfor %}
                       </div>
             </div>
         </div>
