@@ -1008,6 +1008,7 @@ div.lazy {
 }
 
 .pub-stats-card .section-heading {
-    text-align: center !important;
+    display: block !important;
     width: 100%;
+    text-align: center !important;
 }
