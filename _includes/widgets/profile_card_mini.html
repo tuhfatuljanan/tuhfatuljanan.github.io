@@ -59,22 +59,7 @@
 
 </div>
                 
-                               <div class="row pt-2">
-                    <div class="col text-center h4">
-                        {% if site.data.profile.gscholar %}
-                        {%- if site.data.profile.gscholar contains 'scholar.google' -%}
-                        {%- assign gscholar_url = site.data.profile.gscholar -%}
-                        {%- else -%}
-                        {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
-                        {%- endif -%}
-                        <a class="px-1 no-break" target="_blank" href="{{ gscholar_url }}">
-                            <i class="fab fa-google-scholar"></i>
-                        </a>
-                        {% endif %}
-
-                            </div>
-                </div>
-            </div>
+                     </div>
         </div>
                <div class="card border-0 shadow-sm pub-stats-card mt-3">
             <div class="card-body px-4 py-3">
