@@ -92,8 +92,8 @@
         </div>
 <div class="card border-0 shadow-sm pub-stats-card mt-3">
             <div class="card-body px-4 py-3">
-                <h6 class="section-heading border-0 px-0 pt-0 pb-3">
-                    <i class="fas fa-chart-column mr-2"></i>PUBLICATIONS / YEAR
+                <h6 class="section-heading border-0 px-0 pt-0 pb-3 text-center">
+                    PUBLICATIONS / YEAR
                 </h6>
                 {% assign pubs_by_year = site.publications | sort: "date" | group_by_exp: "item", "item.date | date: '%Y'" %}
                 {% assign max_pub_count = 0 %}
