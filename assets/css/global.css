@@ -970,6 +970,12 @@ div.lazy {
     padding: 0 !important;
 }
 
+.academic-profile-links img.sinta-logo {
+    height: 15px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
 .academic-profile-links img.email-logo {
     height: 13px !important;
     width: auto !important;
