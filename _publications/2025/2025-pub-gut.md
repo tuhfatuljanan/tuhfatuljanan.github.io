@@ -18,5 +18,5 @@ authors:
   - Agus Hasan
 
 links:
-  DOI: "https://doi.org/10.53391/2791-8564.1022"
+  Article: "https://doi.org/10.53391/2791-8564.1022"
 ---
