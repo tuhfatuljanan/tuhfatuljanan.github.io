@@ -8,40 +8,7 @@ navbar_title: Home
     <div class="col-lg-3 col-md-4">
     {% include widgets/profile_card_mini.html %}
 
-    <!-- Academic Links -->
-    <div class="academic-links">
-
-        {% if site.data.profile.scopus %}
-        <a href="https://www.scopus.com/authid/detail.uri?authorId={{ site.data.profile.scopus }}"
-           target="_blank"
-           rel="noopener"
-           title="Scopus">
-            <i class="ai ai-scopus"></i>
-            <span>Scopus</span>
-        </a>
-        {% endif %}
-
-        {% if site.data.profile.sinta %}
-        <a href="https://sinta.kemdikbud.go.id/authors/profile/{{ site.data.profile.sinta }}"
-           target="_blank"
-           rel="noopener"
-           title="SINTA">
-            <i class="fas fa-graduation-cap"></i>
-            <span>SINTA</span>
-        </a>
-        {% endif %}
-
-        {% if site.data.profile.email %}
-        <a href="mailto:{{ site.data.profile.email }}"
-           title="Email">
-            <i class="fas fa-envelope"></i>
-            <span>Email</span>
-        </a>
-        {% endif %}
-
-    </div>
-</div>
-    <div class="col-lg-9 col-md-8">
+       <div class="col-lg-9 col-md-8">
 
         {% include widgets/profile_card_bio_only.html %}
 
