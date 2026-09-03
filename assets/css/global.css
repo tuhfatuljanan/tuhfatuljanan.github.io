@@ -931,36 +931,6 @@ div.lazy {
    ACADEMIC PROFILE LINKS
    ========================= */
 
-.academic-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    margin: 12px 0 20px 0;
-    font-size: 0.78rem;
-}
-
-.academic-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--color-text-muted) !important;
-    text-decoration: none !important;
-    transition: opacity 0.2s ease;
-}
-
-.academic-links a:hover {
-    opacity: 0.65;
-}
-
-.academic-links i {
-    font-size: 0.85rem;
-}
-
-/* =========================
-   ACADEMIC PROFILE LINKS
-   ========================= */
-
 .academic-profile-links {
     display: flex;
     justify-content: center;
