@@ -960,7 +960,7 @@ div.lazy {
 }
 
 .academic-profile-links img.profile-logo {
-    height: 18px !important;
+    height: 15px !important;
     width: auto !important;
     max-width: 70px !important;
     object-fit: contain !important;
@@ -971,7 +971,7 @@ div.lazy {
 }
 
 .academic-profile-links img.email-logo {
-    height: 14px !important;
+    height: 13px !important;
     width: auto !important;
     object-fit: contain !important;
 }
