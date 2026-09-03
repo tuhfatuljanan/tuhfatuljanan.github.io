@@ -5,6 +5,9 @@ date: 2026-01-01
 
 pub: "Mathematical Modelling and Numerical Simulation with Applications"
 pub_date: "2026"
+volume: "6"
+issue: "1"
+pages: "186-227"
 
 authors:
   - Tuhfatul Janan
@@ -15,5 +18,5 @@ authors:
   - Agus Hasan
 
 links:
-  Paper: "https://doi.org/10.53391/2791-8564.1022"
+  DOI: "https://doi.org/10.53391/2791-8564.1022"
 ---
