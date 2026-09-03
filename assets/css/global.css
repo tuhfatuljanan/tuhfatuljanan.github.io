@@ -999,3 +999,10 @@ div.lazy {
 .text-profile-bio p:last-child {
     margin-bottom: 0 !important;
 }
+
+.publication-panel .pub-card h5,
+.publication-panel .pub-card-mobile-surface h5 {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    font-weight: 500 !important;
+}
