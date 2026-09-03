@@ -971,7 +971,7 @@ div.lazy {
 }
 
 .academic-profile-links img.sinta-logo {
-    height: 15px !important;
+    height: 20px !important;
     width: auto !important;
     object-fit: contain !important;
 }
@@ -984,6 +984,6 @@ div.lazy {
 
 /* Judul Scopus Publications */
 .publication-panel .section-heading {
-    font-size: 1.15rem !important;
+    font-size: 0.9rem !important;
     font-weight: 600 !important;
 }
