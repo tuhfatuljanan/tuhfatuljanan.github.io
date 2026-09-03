@@ -1010,3 +1010,7 @@ div.lazy {
 .pub-stats-card .section-heading {
     text-align: center !important;
 }
+
+.pub-stats-card .section-heading {
+    text-align: center;
+}
