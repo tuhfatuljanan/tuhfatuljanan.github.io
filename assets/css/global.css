@@ -981,3 +981,9 @@ div.lazy {
     width: auto !important;
     object-fit: contain !important;
 }
+
+/* Judul Scopus Publications */
+.publication-panel .section-heading {
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+}
