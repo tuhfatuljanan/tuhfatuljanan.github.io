@@ -1,23 +1,32 @@
+```html
 <div class="row sticky-top homepage-sidebar">
     <div class="col">
+
+        <!-- Profile Card -->
         <div class="card border-0 shadow-sm">
             <div class="card-body px-4 pt-4 pb-3">
+
                 <div class="row">
                     <div class="col">
                         {% if site.data.profile.portrait_url %}
                         <!-- When the screen is wider than md, float the portrait on the right -->
                         <div class="figure d-none d-md-block">
                             <img
-    src="{{ site.data.profile.portrait_url | relative_url }}"
-    class="figure-img img-fluid profile-portrait-mini"
-    alt="{{ site.data.profile.primary_name }}">
+                                src="{{ site.data.profile.portrait_url | relative_url }}"
+                                class="figure-img img-fluid profile-portrait-mini"
+                                alt="{{ site.data.profile.primary_name }}">
                         </div>
+
                         <div class="mb-3 d-md-none text-center">
-                            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="profile-portrait-mobile" alt="Portrait">
+                            <img
+                                src="{{ site.data.profile.portrait_url | relative_url }}"
+                                class="profile-portrait-mobile"
+                                alt="Portrait">
                         </div>
                         {% endif %}
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col text-center h4">
                         {{ site.data.profile.primary_name }}
@@ -27,100 +36,181 @@
                 <div class="row small">
                     <div class="col text-center">
                         {% for position in site.data.profile.positions %}
-                        {{ position.name }}<br/>
+                            {{ position.name }}<br/>
                         {% endfor %}
                     </div>
                 </div>
 
-<!-- Academic Profile Links -->
-<div class="academic-profile-links" style="clear: both;">
 
-    <a href="https://www.scopus.com/authid/detail.uri?authorId=60636838600"
-   target="_blank"
-   rel="noopener noreferrer"
-   title="Scopus">
-    <img src="{{ '/assets/images/badges/Scopus.webp' | relative_url }}"
-         alt="Scopus"
-         class="profile-logo">
-    <span>Scopus</span>
-</a>
+                <!-- Academic Profile Links -->
+                <div class="academic-profile-links">
 
-    <a href="https://sinta.kemdiktisaintek.go.id/authors/profile/6765452"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="SINTA">
-        <img src="{{ '/assets/images/badges/Sinta.png' | relative_url }}"
-         alt="SINTA"
-         class="profile-logo sinta-logo">
-        <span>SINTA</span>
-    </a>
+                    <a
+                        href="https://www.scopus.com/authid/detail.uri?authorId=60636838600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Scopus">
 
-    <a href="mailto:tuhfatuljanan1@gmail.com"
-       title="Email">
-        <img src="{{ '/assets/images/badges/Gmail.webp' | relative_url }}"
-         alt="Email"
-         class="profile-logo email-logo">
-        <span>Email</span>
-    </a>
+                        <img
+                            src="{{ '/assets/images/badges/Scopus.webp' | relative_url }}"
+                            alt="Scopus"
+                            class="profile-logo">
 
-</div>
-                
-                     </div>
+                        <span>Scopus</span>
+                    </a>
+
+
+                    <a
+                        href="https://sinta.kemdiktisaintek.go.id/authors/profile/6765452"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="SINTA">
+
+                        <img
+                            src="{{ '/assets/images/badges/Sinta.png' | relative_url }}"
+                            alt="SINTA"
+                            class="profile-logo sinta-logo">
+
+                        <span>SINTA</span>
+                    </a>
+
+
+                    <a
+                        href="mailto:tuhfatuljanan1@gmail.com"
+                        title="Email">
+
+                        <img
+                            src="{{ '/assets/images/badges/Gmail.webp' | relative_url }}"
+                            alt="Email"
+                            class="profile-logo email-logo">
+
+                        <span>Email</span>
+                    </a>
+
+                </div>
+
+            </div>
         </div>
-              <div class="pub-chart">
+
+
+        <!-- Publications / Year Card -->
+        <div class="card border-0 shadow-sm pub-stats-card mt-3">
+
+            <div class="card-body px-4 py-3">
+
+                <h6 class="section-heading border-0 px-0 pt-0 pb-3">
+                    <i class=""></i>PUBLICATIONS / YEAR
+                </h6>
+
+
+                {% assign pubs_by_year = site.publications
+                    | sort: "date"
+                    | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+                {% assign max_pub_count = 0 %}
+
+                {% for year in pubs_by_year %}
+
+                    {% assign year_count = year.items | size %}
+
+                    {% if year_count > max_pub_count %}
+                        {% assign max_pub_count = year_count %}
+                    {% endif %}
+
+                {% endfor %}
+
+
+                <!-- Publication Chart -->
+                <div class="pub-chart">
+
                     {% for year in pubs_by_year %}
+
                         {% assign year_count = year.items | size %}
-                        {% assign bar_height = year_count | times: 100.0 | divided_by: max_pub_count %}
+
+                        {% if max_pub_count > 0 %}
+                            {% assign bar_height =
+                                year_count
+                                | times: 100.0
+                                | divided_by: max_pub_count %}
+                        {% else %}
+                            {% assign bar_height = 0 %}
+                        {% endif %}
+
+
                         <div class="pub-bar-item">
-                            <div class="pub-bar-value">{{ year_count }}</div>
-                            <div class="pub-bar-track">
-                                <div class="pub-bar-fill" style="height: {{ bar_height }}%;"></div>
+
+                            <div class="pub-bar-value">
+                                {{ year_count }}
                             </div>
-                            <div class="pub-bar-label">{{ year.name }}</div>
+
+                            <div class="pub-bar-track">
+
+                                <div
+                                    class="pub-bar-fill"
+                                    style="height: {{ bar_height }}%;">
+                                </div>
+
+                            </div>
+
+                            <div class="pub-bar-label">
+                                {{ year.name }}
+                            </div>
+
                         </div>
+
                     {% endfor %}
-                      </div>
+
+                </div>
+
             </div>
         </div>
+
     </div>
 </div>
 
-{% if site.data.profile.wechat_qrcode %}
-<div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-body p-0">
-                <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
-            </div>
-            {% if site.data.profile.wechat_prompt %}
-            <div class="modal-body p-1">
-                {{ site.data.profile.wechat_prompt }}
-            </div>
-            {% endif %}
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
 
+<!-- WeChat Modal -->
 {% if site.data.profile.wechat_qrcode %}
+
 <div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
+
     <div class="modal-dialog modal-sm">
+
         <div class="modal-content">
+
             <div class="modal-body p-0">
-                <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
+
+                <img
+                    src="{{ site.data.profile.wechat_qrcode | relative_url }}"
+                    class="img-fluid"
+                    alt="WeChat QR Code">
+
             </div>
+
             {% if site.data.profile.wechat_prompt %}
+
             <div class="modal-body p-1">
                 {{ site.data.profile.wechat_prompt }}
             </div>
+
             {% endif %}
+
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-dismiss="modal">
+                    Close
+                </button>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
 {% endif %}
+```
