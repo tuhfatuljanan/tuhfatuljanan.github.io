@@ -987,3 +987,7 @@ div.lazy {
     font-size: 0.9rem !important;
     font-weight: 600 !important;
 }
+
+#scopus-publications {
+    scroll-margin-top: 90px;
+}
