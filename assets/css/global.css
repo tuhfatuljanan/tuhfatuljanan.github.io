@@ -1026,7 +1026,7 @@ div.lazy {
 
 .education-entry {
     display: grid !important;
-    grid-template-columns: 100px 420px 1fr;
+    grid-template-columns: 100px 42% 1fr;
     column-gap: 12px;
     align-items: start;
     margin-bottom: 12px !important;
