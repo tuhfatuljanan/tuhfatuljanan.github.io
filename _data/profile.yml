@@ -69,19 +69,12 @@ awards:
 
 
 # ============================================================
-# SPEAKERS
+# TALKS
 # ============================================================
 
-speakers:
+talks:
 
-- name: YOUR SEMINAR / CONFERENCE NAME
-  event: Invited Speaker
-  role: Speaker
+- name: Symposium on Biomathematics (Symomath) 2025
+  role: Presenter
   date: 2025
-  location: Indonesia
-
-- name: YOUR SEMINAR / WEBINAR NAME
-  event: Guest Speaker
-  role: Speaker
-  date: 2024
-  location: Indonesia
+  location: Universitas Airlangga
