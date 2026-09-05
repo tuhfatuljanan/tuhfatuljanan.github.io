@@ -644,7 +644,7 @@ div.lazy {
 .pub-card {
     background: var(--color-surface);
     border-radius: var(--radius-card);
-    padding: 1rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     position: relative;
     transition: box-shadow var(--motion-duration) var(--motion-ease), transform var(--motion-duration) var(--motion-ease), background-color var(--motion-duration) ease;
 }
