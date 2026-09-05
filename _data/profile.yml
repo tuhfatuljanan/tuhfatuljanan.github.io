@@ -49,15 +49,11 @@ education:
 # ============================================================
 
 experience:
+  - date: "2022–2025"
+    name: "Editor in Chief, Jurnal Al-Jabar"
 
-- name: Institut Ahmad Dahlan Probolinggo
-  position: Lecturer and Researcher
-  date: 2024–Present
-
-- name: YOUR PREVIOUS INSTITUTION
-  position: YOUR POSITION
-  date: YOUR PERIOD
-
+  - date: "2021–2024"
+    name: "Assistant to Vice Chair I, Institut Ahmad Dahlan Probolinggo"
 
 # ============================================================
 # HONOURS AND AWARDS
