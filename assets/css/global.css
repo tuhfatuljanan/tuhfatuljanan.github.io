@@ -795,7 +795,7 @@ div.lazy {
 .education-item {
     display: flex !important;
     align-items: flex-start !important;
-    margin: 0 0 14px 0 !important;
+    margin: 0 0 12px 0 !important;
     padding: 0 !important;
 }
 
