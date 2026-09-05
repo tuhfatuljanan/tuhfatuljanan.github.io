@@ -1028,10 +1028,10 @@ div.lazy {
     display: grid !important;
 
     /* Tahun | Kampus | Gelar */
-    grid-template-columns: 100px 1fr 1fr !important;
+    grid-template-columns: 100px 38% 1fr !important;
 
-    /* Jarak antar kolom dibuat sama */
-    column-gap: 12px !important;
+    /* Jarak antar kolom */
+    column-gap: 8px !important;
 
     align-items: start;
     margin-bottom: 12px !important;
@@ -1048,8 +1048,8 @@ div.lazy {
     display: flex !important;
     align-items: flex-start !important;
 
-    /* Jarak internal tetap 12px */
-    gap: 12px !important;
+    /* Jarak logo/nama kampus */
+    gap: 7px !important;
 
     line-height: 1.4 !important;
     margin: 0 !important;
