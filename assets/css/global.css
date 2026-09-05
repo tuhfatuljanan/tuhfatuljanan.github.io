@@ -1021,3 +1021,36 @@ div.lazy {
 .experience-item {
     margin-bottom: 8px !important;
 }
+
+/* ==================== EDUCATION: 3 COLUMNS ==================== */
+
+.education-entry {
+    display: grid !important;
+    grid-template-columns: 100px minmax(250px, 1fr) minmax(220px, 0.8fr);
+    column-gap: 12px;
+    align-items: start;
+    margin-bottom: 12px !important;
+    padding: 0 !important;
+}
+
+.education-entry .education-year {
+    width: auto;
+    margin-right: 0;
+}
+
+.education-entry .education-school {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+.education-entry .education-position {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
