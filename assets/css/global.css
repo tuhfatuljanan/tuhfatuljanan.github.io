@@ -1027,13 +1027,23 @@ div.lazy {
 .education-entry {
     display: grid !important;
 
-    /* Tahun | Kampus | Gelar */
-    grid-template-columns: 100px 38% 1fr !important;
+    /*
+     * Kolom:
+     * 1. Tahun
+     * 2. Nama Kampus
+     * 3. Nama Gelar
+     *
+     * Kolom kampus dipersempit agar gelar bergeser ke kiri.
+     */
+    grid-template-columns: 100px 32% 1fr !important;
 
-    /* Jarak antar kolom */
+    /*
+     * Jarak Tahun → Kampus
+     * dan Kampus → Gelar
+     */
     column-gap: 8px !important;
 
-    align-items: start;
+    align-items: start !important;
     margin-bottom: 12px !important;
     padding: 0 !important;
 }
@@ -1048,12 +1058,20 @@ div.lazy {
     display: flex !important;
     align-items: flex-start !important;
 
-    /* Jarak logo/nama kampus */
+    /*
+     * Jarak antara isi kampus dan logo.
+     */
     gap: 7px !important;
 
     line-height: 1.4 !important;
     margin: 0 !important;
     padding: 0 !important;
+
+    /*
+     * Jangan biarkan elemen ini mengambil
+     * ruang tambahan yang mendorong gelar.
+     */
+    min-width: 0 !important;
 }
 
 .education-entry .education-position {
@@ -1062,4 +1080,10 @@ div.lazy {
     font-weight: 400 !important;
     margin: 0 !important;
     padding: 0 !important;
+
+    /*
+     * Pastikan gelar dimulai tepat dari
+     * awal kolom ketiga.
+     */
+    min-width: 0 !important;
 }
