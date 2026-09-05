@@ -130,47 +130,39 @@
                         </div>
                     </div>
                     {% endif %}
+                    
 
-
-                    <!-- ==================== TALKS ==================== -->
+<!-- ==================== TALKS ==================== -->
                     {% if site.data.profile.speakers %}
-                    <div class="col-lg-6 mt-4">
-                        <div class="mx-2 my-1">
-                            <h6>Talks and Presentations</h6>
+<div class="col-lg-6 mt-4">
+    <div class="mx-2 my-1">
+        <h6>Talks & Presentations</h6>
+        <ul class="list-unstyled mb-1">
+            {% for item in site.data.profile.speakers %}
+            <li class="media mb-2">
 
-                            <ul class="list-unstyled mb-1">
-
-                                {% for item in site.data.profile.speakers %}
-
-                                <li class="media mb-1">
-    <div class="media-body">
-        <div class="small d-flex">
-            <div class="mr-2 no-break">
-                <em>{{ item.date }}</em>
-            </div>
-
-            <div>
-                <div>{{ item.name }}</div>
-                <div class="small">{{ item.event }}</div>
-                <div class="small">{{ item.role }}</div>
-                {% if item.location %}
-                <div class="small">{{ item.location }}</div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</li>
-
-                                {% endfor %}
-
-                            </ul>
+                <div class="media-body">
+                    <!-- Baris 1: Tahun + Nama kegiatan -->
+                    <div class="d-flex">
+                        <div class="mr-2 no-break">
+                            <em>{{ item.date }}</em>
+                        </div>
+                        <div>
+                            {{ item.name }}
                         </div>
                     </div>
-                    {% endif %}
+
+                    <!-- Baris 2: Peran + Lokasi -->
+                    <div class="small ml-5">
+                        {% if item.role %}{{ item.role }}{% endif %}
+                        {% if item.location %} — {{ item.location }}{% endif %}
+                    </div>
 
                 </div>
 
-            </div>
-        </div>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
+{% endif %}
