@@ -5,22 +5,29 @@ navbar_name: "Tuhfatul Janan"
 positions:
 - name: Lecturer and Researcher
 - name: Institut Ahmad Dahlan Probolinggo
- 
+
 scopus: "https://www.scopus.com/authid/detail.uri?authorId=60636838600"
 sinta: "https://sinta.kemdiktisaintek.go.id/authors/profile/6765452"
 
 short_bio_text_justify:
+
 short_bio:
   <p>
-  I am Tuhfatul Janan, a lecturer and researcher at Institut Ahmad Dahlan Probolinggo, Indonesia. 
+  I am Tuhfatul Janan, a lecturer and researcher at Institut Ahmad Dahlan Probolinggo, Indonesia.
   </p>
   <p>
   My research interests are in mathematical modeling, biomathematics, and optimal control. My work involves using mathematical models to better understand biological systems, disease transmission, and population dynamics, including the application of optimal control methods to epidemiological problems.
   </p>
-     
+
 portrait_url: /assets/images/badges/Tuhfa.png
 
+
+# ============================================================
+# EDUCATION
+# ============================================================
+
 education:
+
 - name: Universitas Airlangga
   logo: /assets/images/badges/UNAIR.png
   position: Ph.D. in Mathematics and Natural Sciences
@@ -35,10 +42,50 @@ education:
   logo: /assets/images/badges/UNAIR.png
   position: B.Sc. in Mathematics
   date: 2012–2016
-  
-    
+
+
+# ============================================================
+# EXPERIENCE
+# ============================================================
+
+experience:
+
+- name: Institut Ahmad Dahlan Probolinggo
+  position: Lecturer and Researcher
+  date: 2024–Present
+
+- name: YOUR PREVIOUS INSTITUTION
+  position: YOUR POSITION
+  date: YOUR PERIOD
+
+
+# ============================================================
+# HONOURS AND AWARDS
+# ============================================================
+
 awards:
+
 - name: Doctoral Scholarship from the Ministry of Religious Affairs and LPDP
   date: 2023
+
 - name: Best Graduate of the Faculty of Science and Technology, Universitas Airlangga
   date: 2016
+
+
+# ============================================================
+# SPEAKERS
+# ============================================================
+
+speakers:
+
+- name: YOUR SEMINAR / CONFERENCE NAME
+  event: Invited Speaker
+  role: Speaker
+  date: 2025
+  location: Indonesia
+
+- name: YOUR SEMINAR / WEBINAR NAME
+  event: Guest Speaker
+  role: Speaker
+  date: 2024
+  location: Indonesia
