@@ -1026,31 +1026,40 @@ div.lazy {
 
 .education-entry {
     display: grid !important;
-    grid-template-columns: 100px 42% 1fr;
-    column-gap: 12px;
+
+    /* Tahun | Kampus | Gelar */
+    grid-template-columns: 100px 1fr 1fr !important;
+
+    /* Jarak antar kolom dibuat sama */
+    column-gap: 12px !important;
+
     align-items: start;
     margin-bottom: 12px !important;
     padding: 0 !important;
 }
 
 .education-entry .education-year {
-    width: auto;
-    margin-right: 0;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 1px 0 0 0 !important;
 }
 
 .education-entry .education-school {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0;
+    display: flex !important;
+    align-items: flex-start !important;
+
+    /* Jarak internal tetap 12px */
+    gap: 12px !important;
+
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .education-entry .education-position {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
