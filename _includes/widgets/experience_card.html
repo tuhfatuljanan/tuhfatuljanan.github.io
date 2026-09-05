@@ -65,46 +65,23 @@
 
                                 {% for item in site.data.profile.experience %}
 
-                                <li class="media mb-2">
+                                <li class="media mb-1">
+    <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
 
-                                    {% if item.logo %}
-                                    <img src="{{ item.logo | relative_url }}"
-                                         alt="{{ item.name }}"
-                                         style="width: 18px;"
-                                         class="mr-1 mt-1">
-                                    {% endif %}
+    <div class="media-body">
+        <div class="small d-flex">
+            <div class="mr-2 no-break">
+                <em>{{ item.date }}</em>
+            </div>
 
-                                    <div class="media-body">
-
-                                        <div>
-                                            {{ item.name }}
-                                        </div>
-
-                                        {% if item.dept %}
-                                        <div class="small">
-                                            {{ item.dept }}
-                                        </div>
-                                        {% endif %}
-
-                                        <div class="small d-flex">
-
-                                            {% if item.position %}
-                                            <div>
-                                                {{ item.position }}
-                                            </div>
-                                            {% endif %}
-
-                                            {% if item.date %}
-                                            <div class="mt-auto ml-auto no-break">
-                                                <em>{{ item.date }}</em>
-                                            </div>
-                                            {% endif %}
-
-                                        </div>
-
-                                    </div>
-
-                                </li>
+            <div>
+                <div>{{ item.name }}</div>
+                <div class="small">{{ item.dept }}</div>
+                <div class="small">{{ item.position }}</div>
+            </div>
+        </div>
+    </div>
+</li>
 
                                 {% endfor %}
 
@@ -154,52 +131,24 @@
 
                                 {% for item in site.data.profile.speakers %}
 
-                                <li class="media mb-2">
+                                <li class="media mb-1">
+    <div class="media-body">
+        <div class="small d-flex">
+            <div class="mr-2 no-break">
+                <em>{{ item.date }}</em>
+            </div>
 
-                                    {% if item.logo %}
-                                    <img src="{{ item.logo | relative_url }}"
-                                         alt="{{ item.name }}"
-                                         style="width: 18px;"
-                                         class="mr-1 mt-1">
-                                    {% endif %}
-
-                                    <div class="media-body">
-
-                                        <div>
-                                            {{ item.name }}
-                                        </div>
-
-                                        {% if item.event %}
-                                        <div class="small">
-                                            {{ item.event }}
-                                        </div>
-                                        {% endif %}
-
-                                        <div class="small d-flex">
-
-                                            {% if item.role %}
-                                            <div>
-                                                {{ item.role }}
-                                            </div>
-                                            {% endif %}
-
-                                            {% if item.date %}
-                                            <div class="mt-auto ml-auto no-break">
-                                                <em>{{ item.date }}</em>
-                                            </div>
-                                            {% endif %}
-
-                                        </div>
-
-                                        {% if item.location %}
-                                        <div class="small">
-                                            {{ item.location }}
-                                        </div>
-                                        {% endif %}
-
-                                    </div>
-
-                                </li>
+            <div>
+                <div>{{ item.name }}</div>
+                <div class="small">{{ item.event }}</div>
+                <div class="small">{{ item.role }}</div>
+                {% if item.location %}
+                <div class="small">{{ item.location }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</li>
 
                                 {% endfor %}
 
