@@ -836,6 +836,7 @@ div.lazy {
     font-weight: 400 !important;
     color: var(--color-text-muted) !important;
     margin-top: 1px !important;
+    margin-bottom: 0 !important;
 }
 .education-logo-right {
     display: block !important;
