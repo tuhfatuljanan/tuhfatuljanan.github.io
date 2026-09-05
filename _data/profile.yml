@@ -50,10 +50,16 @@ education:
 
 experience:
   - date: "2022–2025"
-    name: "Editor in Chief, Jurnal Al-Jabar"
+    name: "AL JABAR: Jurnal Pendidikan dan Pembelajaran Matematika (SINTA 5)"
+    position: "Editor in Chief"
 
   - date: "2021–2024"
-    name: "Assistant to Vice Chair I, Institut Ahmad Dahlan Probolinggo"
+    name: "Institut Ahmad Dahlan Probolinggo"
+    position: "Assistant to Vice Chair I"
+
+    - date: "2021–Present"
+    name: "Institut Ahmad Dahlan Probolinggo"
+    position: "Lecturer"
 
 # ============================================================
 # HONOURS AND AWARDS
