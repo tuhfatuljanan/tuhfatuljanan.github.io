@@ -1013,3 +1013,7 @@ div.lazy {
     width: 100%;
     text-align: center !important;
 }
+
+.talks-item:last-child {
+    margin-bottom: 0 !important;
+}
