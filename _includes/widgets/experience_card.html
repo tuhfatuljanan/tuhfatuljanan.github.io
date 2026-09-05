@@ -73,25 +73,21 @@
 
                 <div class="media-body">
                     <div class="d-flex">
-
-                        <!-- Tahun di sebelah kiri -->
                         <div class="mr-2 no-break">
                             <em>{{ item.date }}</em>
                         </div>
 
-                        <!-- Keterangan di sebelah kanan -->
                         <div>
                             <div>{{ item.name }}</div>
 
                             {% if item.dept %}
-                            <div class="small">{{ item.dept }}</div>
+                            <div>{{ item.dept }}</div>
                             {% endif %}
 
                             {% if item.position %}
-                            <div class="small">{{ item.position }}</div>
+                            <div>{{ item.position }}</div>
                             {% endif %}
                         </div>
-
                     </div>
                 </div>
 
@@ -101,7 +97,7 @@
     </div>
 </div>
 {% endif %}
-
+                    
                     <!-- ==================== HONOURS AND AWARDS ==================== -->
                     {% if site.data.profile.awards %}
                     <div class="col-lg-6 mt-4">
@@ -133,7 +129,7 @@
                     
 
 <!-- ==================== TALKS ==================== -->
-                    {% if site.data.profile.speakers %}
+                {% if site.data.profile.speakers %}
 <div class="col-lg-6 mt-4">
     <div class="mx-2 my-1">
         <h6>Talks & Presentations</h6>
@@ -142,22 +138,20 @@
             <li class="media mb-2">
 
                 <div class="media-body">
-                    <!-- Baris 1: Tahun + Nama kegiatan -->
                     <div class="d-flex">
                         <div class="mr-2 no-break">
                             <em>{{ item.date }}</em>
                         </div>
+
                         <div>
                             {{ item.name }}
                         </div>
                     </div>
 
-                    <!-- Baris 2: Peran + Lokasi -->
-                    <div class="small ml-5">
+                    <div class="ml-5">
                         {% if item.role %}{{ item.role }}{% endif %}
                         {% if item.location %} — {{ item.location }}{% endif %}
                     </div>
-
                 </div>
 
             </li>
