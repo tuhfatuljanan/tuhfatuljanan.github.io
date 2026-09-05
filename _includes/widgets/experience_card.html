@@ -47,44 +47,38 @@
 
                 <!-- ==================== EXPERIENCE ==================== -->
                 {% if site.data.profile.experience %}
-                <div class="mx-2 my-4">
-                    <h6>Experience</h6>
+<div class="mx-2 my-4">
+    <h6>Experience</h6>
 
-                    <ul class="list-unstyled mb-4">
-                        {% for item in site.data.profile.experience %}
-                        <li class="education-item">
+    <ul class="list-unstyled mb-4">
+        {% for item in site.data.profile.experience %}
+        <li class="education-item">
 
-                            <div class="education-year">
-                                {{ item.date }}
-                            </div>
+            <div class="education-year">
+                {{ item.date }}
+            </div>
 
-                            <div class="education-item-info">
+            <div class="education-item-info">
 
-                                <div class="education-school">
-                                    {{ item.name }}
+                <!-- Baris pertama: nama kegiatan/institusi -->
+                <div class="education-school">
+                    {{ item.name }}
+                </div>
 
-                                    {% if item.logo %}
-                                    <img src="{{ item.logo | relative_url }}"
-                                         alt="{{ item.name }}"
-                                         class="education-logo-right">
-                                    {% endif %}
-                                </div>
-
-                                {% if item.dept %}
-                                <div>{{ item.dept }}</div>
-                                {% endif %}
-
-                                {% if item.position %}
-                                <div>{{ item.position }}</div>
-                                {% endif %}
-
-                            </div>
-
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <!-- Baris kedua: jabatan -->
+                {% if item.position %}
+                <div class="education-position">
+                    {{ item.position }}
                 </div>
                 {% endif %}
+
+            </div>
+
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
 
                 <!-- ==================== HONOURS AND AWARDS ==================== -->
