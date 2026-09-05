@@ -101,45 +101,25 @@
 
                 <!-- ==================== TALKS ==================== -->
                 {% if site.data.profile.speakers %}
-                <div class="mx-2 mt-4 mb-0">
+<div class="mx-2 my-4">
     <h6>Talks and Presentations</h6>
 
     <ul class="list-unstyled mb-0">
-                        {% for item in site.data.profile.speakers %}
-                        <li class="education-item">
+        {% for item in site.data.profile.speakers %}
+        <li class="education-item">
 
-                            <div class="education-year">
-                                {{ item.date }}
-                            </div>
-
-                            <div class="education-item-info">
-
-                                <div class="education-school">
-                                    {{ item.name }}
-                                </div>
-
-                                {% if item.role or item.location %}
-                                <div class="education-position">
-                                    {% if item.role %}
-                                    {{ item.role }}
-                                    {% endif %}
-
-                                    {% if item.location %}
-                                    {% if item.role %} — {% endif %}
-                                    {{ item.location }}
-                                    {% endif %}
-                                </div>
-                                {% endif %}
-
-                            </div>
-
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-
+            <div class="education-year">
+                {{ item.date }}
             </div>
-        </div>
-    </div>
+
+            <div class="education-item-info">
+                <div class="education-school">
+                    {{ item.name }}
+                </div>
+            </div>
+
+        </li>
+        {% endfor %}
+    </ul>
 </div>
+{% endif %}
