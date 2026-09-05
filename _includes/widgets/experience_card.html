@@ -5,44 +5,39 @@
 
                 <!-- ==================== EDUCATION ==================== -->
                 {% if site.data.profile.education %}
-                <div class="mx-2 my-1">
-                    <h6>Education</h6>
+<div class="mx-2 my-1">
+    <h6>Education</h6>
 
-                    <ul class="list-unstyled mb-4">
-                        {% for item in site.data.profile.education %}
-                        <li class="education-item">
+    <ul class="list-unstyled mb-4">
+        {% for item in site.data.profile.education %}
+        <li class="education-item education-entry">
 
-                            <div class="education-year">
-                                {{ item.date }}
-                            </div>
+            <!-- Kolom 1: Tahun -->
+            <div class="education-year">
+                {{ item.date }}
+            </div>
 
-                            <div class="education-item-info">
+            <!-- Kolom 2: Nama kampus + logo -->
+            <div class="education-school">
+                <span>{{ item.name }}</span>
 
-                                <div class="education-school">
-                                    <span>{{ item.name }}</span>
-
-                                    {% if item.logo %}
-                                    <img src="{{ item.logo | relative_url }}"
-                                         alt="{{ item.name }}"
-                                         class="education-logo-right">
-                                    {% endif %}
-                                </div>
-
-                                {% if item.dept %}
-                                <div>{{ item.dept }}</div>
-                                {% endif %}
-
-                                <div class="education-position">
-                                    {{ item.position }}
-                                </div>
-
-                            </div>
-
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                {% if item.logo %}
+                <img src="{{ item.logo | relative_url }}"
+                     alt="{{ item.name }}"
+                     class="education-logo-right">
                 {% endif %}
+            </div>
+
+            <!-- Kolom 3: Gelar / Program Studi -->
+            <div class="education-position">
+                {{ item.position }}
+            </div>
+
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
 
                 <!-- ==================== EXPERIENCE ==================== -->
