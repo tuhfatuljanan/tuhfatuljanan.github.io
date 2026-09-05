@@ -1017,3 +1017,7 @@ div.lazy {
 .talks-item:last-child {
     margin-bottom: 0 !important;
 }
+
+.experience-item {
+    margin-bottom: 12px !important;
+}
