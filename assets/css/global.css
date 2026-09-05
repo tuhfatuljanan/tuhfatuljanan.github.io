@@ -795,7 +795,7 @@ div.lazy {
 .education-item {
     display: flex !important;
     align-items: flex-start !important;
-    margin: 0 0 10px 0 !important;
+    margin: 0 0 8px 0 !important;
     padding: 0 !important;
 }
 
@@ -1019,5 +1019,5 @@ div.lazy {
 }
 
 .experience-item {
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
 }
