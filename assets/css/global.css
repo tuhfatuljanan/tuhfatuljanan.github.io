@@ -1149,3 +1149,17 @@ html[data-theme="light"] .pub-bar-label {
 html[data-theme="dark"] .pub-bar-label {
     color: var(--color-text) !important;
 }
+
+/* =========================================
+   PROFILE LINKS: SCOPUS, SINTA, EMAIL
+   Light Mode = Black
+   Dark Mode = Theme Text
+   ========================================= */
+
+html[data-theme="light"] .academic-profile-links a {
+    color: #000 !important;
+}
+
+html[data-theme="dark"] .academic-profile-links a {
+    color: var(--color-text) !important;
+}
