@@ -987,6 +987,7 @@ div.lazy {
 .publication-panel .section-heading {
     font-size: 0.9rem !important;
     font-weight: 600 !important;
+    color: var(--color-text) !important;
 }
 
 #scopus-publications {
