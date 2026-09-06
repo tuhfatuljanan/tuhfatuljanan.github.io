@@ -808,7 +808,7 @@ div.lazy {
     font-size: 0.875rem !important;
     line-height: 1.4 !important;
     font-weight: 400 !important;
-    color: var(--color-text-muted) !important;
+    color: var(--color-text) !important;
 
     text-align: left !important;
     white-space: nowrap !important;
@@ -884,7 +884,7 @@ div.lazy {
     font-size: 0.875rem !important;
     line-height: 1.4 !important;
     font-weight: 400 !important;
-    color: var(--color-text-muted) !important;
+    color: var(--color-text) !important;
 }
 
 /* =========================
@@ -907,7 +907,7 @@ div.lazy {
     font-size: 0.875rem !important;
     line-height: 1.4 !important;
     font-weight: 400 !important;
-    color: var(--color-text-muted) !important;
+    color: var(--color-text) !important;
 
     white-space: nowrap !important;
 }
