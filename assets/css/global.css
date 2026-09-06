@@ -1104,38 +1104,34 @@ div.lazy {
 }
 
 /* =========================================
-   BLACK TEXT — EDUCATION TO TALKS
+   EDUCATION → TALKS
+   Light Mode = Black
+   Dark Mode = Theme Text Color
    ========================================= */
 
-/* Judul section */
-h6 {
+/* ---------- LIGHT MODE ---------- */
+
+html[data-theme="light"] h6,
+html[data-theme="light"] .education-item,
+html[data-theme="light"] .education-item *,
+html[data-theme="light"] .education-year,
+html[data-theme="light"] .education-school,
+html[data-theme="light"] .education-position,
+html[data-theme="light"] .education-item-info,
+html[data-theme="light"] .education-item-info > div {
     color: #000 !important;
 }
 
-/* Tahun */
-.education-year {
-    color: #000 !important;
-}
 
-/* Nama universitas / institusi / kegiatan */
-.education-school {
-    color: #000 !important;
-}
+/* ---------- DARK MODE ---------- */
 
-/* Gelar / posisi / program studi */
-.education-position {
-    color: #000 !important;
-}
-
-/* Teks tambahan di Education, Experience,
-   Awards, dan Talks */
-.education-item-info,
-.education-item-info > div {
-    color: #000 !important;
-}
-
-/* Semua teks di item Education–Talks */
-.education-item,
-.education-item * {
-    color: #000 !important;
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .education-item,
+html[data-theme="dark"] .education-item *,
+html[data-theme="dark"] .education-year,
+html[data-theme="dark"] .education-school,
+html[data-theme="dark"] .education-position,
+html[data-theme="dark"] .education-item-info,
+html[data-theme="dark"] .education-item-info > div {
+    color: var(--color-text) !important;
 }
