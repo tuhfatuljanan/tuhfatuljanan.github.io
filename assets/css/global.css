@@ -946,7 +946,7 @@ div.lazy {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    color: var(--color-text-muted) !important;
+    color: var(--color-text) !important;
     text-decoration: none !important;
     font-weight: 400;
     transition: opacity 0.2s ease;
