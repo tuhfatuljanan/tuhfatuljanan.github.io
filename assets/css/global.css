@@ -1083,10 +1083,18 @@ div.lazy {
     min-width: 0 !important;
 }
 
-.publication-panel .section-heading,
-.publication-panel h2,
-.publication-panel h3 {
+/* ==================== PUBLICATION HEADING ==================== */
+
+html[data-theme="light"] .publication-panel .section-heading,
+html[data-theme="light"] .publication-panel h2,
+html[data-theme="light"] .publication-panel h3 {
     color: #000 !important;
+}
+
+html[data-theme="dark"] .publication-panel .section-heading,
+html[data-theme="dark"] .publication-panel h2,
+html[data-theme="dark"] .publication-panel h3 {
+    color: var(--color-text) !important;
 }
 
 /* =========================================
@@ -1122,17 +1130,21 @@ html[data-theme="dark"] .education-item-info > div {
     color: var(--color-text) !important;
 }
 
-/* =========================================
-   SCOPUS PUBLICATIONS
-   Light Mode = Black
-   Dark Mode = Theme Text
-   ========================================= */
+/* ==================== SCOPUS PUBLICATIONS ==================== */
 
 html[data-theme="light"] .pub-bar-label {
     color: #000 !important;
 }
 
 html[data-theme="dark"] .pub-bar-label {
+    color: var(--color-text) !important;
+}
+
+html[data-theme="light"] .pub-bar-value {
+    color: #000 !important;
+}
+
+html[data-theme="dark"] .pub-bar-value {
     color: var(--color-text) !important;
 }
 
