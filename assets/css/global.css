@@ -582,7 +582,7 @@ div.lazy {
 }
 
 .pub-bar-label {
-    color: var(--color-text-muted);
+    color: var(--color-text) !important;
     font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -993,7 +993,7 @@ div.lazy {
 .publication-panel .section-heading {
     font-size: 0.9rem !important;
     font-weight: 600 !important;
-    color: var(--color-text-muted) !important;
+    color: var(--color-text) !important;
 }
 
 #scopus-publications {
