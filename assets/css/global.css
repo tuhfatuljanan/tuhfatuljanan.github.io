@@ -1096,3 +1096,9 @@ div.lazy {
      */
     min-width: 0 !important;
 }
+
+.publication-panel .section-heading,
+.publication-panel h2,
+.publication-panel h3 {
+    color: #000 !important;
+}
