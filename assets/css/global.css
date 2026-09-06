@@ -1135,3 +1135,17 @@ html[data-theme="dark"] .education-item-info,
 html[data-theme="dark"] .education-item-info > div {
     color: var(--color-text) !important;
 }
+
+/* =========================================
+   SCOPUS PUBLICATIONS
+   Light Mode = Black
+   Dark Mode = Theme Text
+   ========================================= */
+
+html[data-theme="light"] .pub-bar-label {
+    color: #000 !important;
+}
+
+html[data-theme="dark"] .pub-bar-label {
+    color: var(--color-text) !important;
+}
