@@ -1175,3 +1175,8 @@ html[data-theme="light"] .pub-bar-value {
 html[data-theme="dark"] .pub-bar-value {
     color: var(--color-text) !important;
 }
+
+/* Menyelaraskan nama universitas Education dengan Experience */
+.education-entry .education-school {
+    transform: translateX(4px) !important;
+}
