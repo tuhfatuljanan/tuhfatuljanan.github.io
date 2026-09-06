@@ -1149,8 +1149,3 @@ html[data-theme="light"] .pub-bar-label {
 html[data-theme="dark"] .pub-bar-label {
     color: var(--color-text) !important;
 }
-
-/* Samakan ukuran font tahun Education sampai Talks */
-.education-year {
-    font-size: inherit !important;
-}
