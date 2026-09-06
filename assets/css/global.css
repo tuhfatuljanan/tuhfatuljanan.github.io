@@ -583,7 +583,7 @@ div.lazy {
 }
 
 .pub-bar-label {
-    color: var(--color-text-muted);
+    color: var(--color-text) !important;
     font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.02em;
