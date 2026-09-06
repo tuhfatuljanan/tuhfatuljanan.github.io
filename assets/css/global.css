@@ -1102,3 +1102,40 @@ div.lazy {
 .publication-panel h3 {
     color: #000 !important;
 }
+
+/* =========================================
+   BLACK TEXT — EDUCATION TO TALKS
+   ========================================= */
+
+/* Judul section */
+h6 {
+    color: #000 !important;
+}
+
+/* Tahun */
+.education-year {
+    color: #000 !important;
+}
+
+/* Nama universitas / institusi / kegiatan */
+.education-school {
+    color: #000 !important;
+}
+
+/* Gelar / posisi / program studi */
+.education-position {
+    color: #000 !important;
+}
+
+/* Teks tambahan di Education, Experience,
+   Awards, dan Talks */
+.education-item-info,
+.education-item-info > div {
+    color: #000 !important;
+}
+
+/* Semua teks di item Education–Talks */
+.education-item,
+.education-item * {
+    color: #000 !important;
+}
