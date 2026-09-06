@@ -1035,7 +1035,7 @@ div.lazy {
      *
      * Kolom kampus dipersempit agar gelar bergeser ke kiri.
      */
-    grid-template-columns: 100px 25% 1fr !important;
+    grid-template-columns: 100px 30% 1fr !important;
 
     /*
      * Jarak Tahun → Kampus
