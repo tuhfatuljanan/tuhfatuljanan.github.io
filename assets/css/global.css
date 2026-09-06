@@ -1163,3 +1163,17 @@ html[data-theme="light"] .academic-profile-links a {
 html[data-theme="dark"] .academic-profile-links a {
     color: var(--color-text) !important;
 }
+
+/* =========================================
+   PUBLICATION / YEAR — JUMLAH PUBLIKASI
+   Light Mode = Black
+   Dark Mode = Theme Text
+   ========================================= */
+
+html[data-theme="light"] .pub-bar-value {
+    color: #000 !important;
+}
+
+html[data-theme="dark"] .pub-bar-value {
+    color: var(--color-text) !important;
+}
